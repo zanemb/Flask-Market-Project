@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}
+Become a Member
+{% endblock %}
+
+{% block content %}
+<body class="text-center">
+    <div class ='container'>
+        <form method='POST' class='form-register' style='color:black'>
+            {{ form.hidden_tag() }}
+            <br>
+            <img class="mb-4" src="https://icon-library.com/images/grocery-icon/grocery-icon-3.jpg" alt="">
+            <h1 class="h3 mb-3 font-weight-normal">
+                <i>
+                    Become a Member Today
+                </i>
+            </h1>
+            <br>
+            {{ form.username.label() }}
+            {{ form.username(class='form-control', placeholder='Customer Name') }}
+
+            {{ form.email_address.label() }}
+            {{ form.email_address(class='form-control', placeholder='Email Address') }}
+
+            {{ form.password1.label() }}
+            {{ form.password1(class='form-control', placeholder='Password') }}
+
+            {{ form.password2.label() }}
+            {{ form.password2(class='form-control', placeholder='Confirm Password') }}
+
+            <br>
+
+            {{ form.submit(class='btn btn-lg btn-block btn-primary') }}
+            <br>
+
+             <div class="checkbox mb-3">
+                <h6>Already a member of this store?</h6>
+                <a class="btn btn-sm btn-secondary" href="{{ url_for('login_page') }}">Login</a>
+            </div>
+
+        </form>
+    </div>
+</body>
+{% endblock %}
